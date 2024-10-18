@@ -1,2 +1,4 @@
 .vercel
 test-results
+node_modules
+yarn.lock
