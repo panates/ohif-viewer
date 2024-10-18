@@ -49,14 +49,14 @@ export const parameters = {
     disable: true,
   },
   backgrounds: {
-    default: 'OHIF-v3',
+    default: 'Advision-v3',
     values: [
       {
         name: 'White',
         value: '#FFFFFF',
       },
       {
-        name: 'OHIF-v3',
+        name: 'Adivison-v3',
         value: '#090C29',
       },
       {

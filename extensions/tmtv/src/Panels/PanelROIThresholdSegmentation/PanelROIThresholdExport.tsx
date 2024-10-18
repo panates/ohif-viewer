@@ -138,7 +138,7 @@ export default function PanelRoiThresholdSegmentation({
         className="absolute bottom-1 left-[50px] flex cursor-pointer items-center justify-center text-blue-400 opacity-50 hover:opacity-80"
         onClick={() => {
           // navigate to a url in a new tab
-          window.open('https://github.com/OHIF/Viewers/blob/master/modes/tmtv/README.md', '_blank');
+          window.open('https://www.panates.com', '_blank');
         }}
       >
         <Icon

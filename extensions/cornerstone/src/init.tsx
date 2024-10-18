@@ -46,7 +46,7 @@ export default async function init({
   servicesManager,
   commandsManager,
   extensionManager,
-  appConfig
+  appConfig,
 }: Types.Extensions.ExtensionParams): Promise<void> {
   // Note: this should run first before initializing the cornerstone
   // DO NOT CHANGE THE ORDER
@@ -114,8 +114,7 @@ export default async function init({
   ) {
     uiNotificationService.show({
       title: 'Cross Origin Isolation',
-      message:
-        'Cross Origin Isolation is not enabled, read more about it here: https://docs.ohif.org/faq/',
+      message: 'Cross Origin Isolation is not enabled',
       type: 'warning',
     });
   }
@@ -322,7 +321,7 @@ function _showCPURenderingModal(uiModalService, hangingProtocolService) {
     if (progress === 100) {
       uiModalService.show({
         content: CPUModal,
-        title: 'OHIF Fell Back to CPU Rendering',
+        title: 'Advision Fell Back to CPU Rendering',
       });
 
       return true;
