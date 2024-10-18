@@ -1,7 +1,9 @@
 {
-  "About OHIF Viewer": "OHIF Viewer - Hakkında",
+  "About OHIF Viewer": "Advision Viewer - Hakkında",
   "Browser": "Tarayıcı",
   "Build number": "Derleme Numarası",
+  "Commit hash": "Commit hash",
+  "Important links": "Önemli bağlantılar",
   "Last master commits": "Son Kaynak Kod Güncellemesi",
   "More details": "Daha Fazla Detay",
   "Name": "İsim",
@@ -10,5 +12,6 @@
   "Repository URL": "Kaynak Kod URL",
   "Value": "Değer",
   "Version information": "Sürüm Bilgisi",
+  "Version number": "Versiyon",
   "Visit the forum": "Forumu ziyaret et"
 }

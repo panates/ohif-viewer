@@ -1,10 +1,20 @@
 {
   "AccessionNumber": "Accession #",
+  "ClearFilters": "Filtreleri Temizle",
+  "Description": "Açıklama",
   "Empty": "Boş",
-  "MRN": "MRN",
+  "Filter list to 100 studies or less to enable sorting": "Sıralamayı etkinleştirmek için listeyi 100 veya daha az çalışmaya filtreleyin",
+  "Instances": "Örnekler",
   "Modality": "Modalite",
+  "MRN": "MRN",
   "PatientName": "Hasta Adı",
   "StudyDate": "Çalışma Zamanı",
-  "Description": "Açıklama",
-  "StudyList": "Çalışma Listesi"
+  "StudyList": "Çalışma Listesi",
+  "Next": "Sonraki >",
+  "No studies available": "Çalışma bulunamadı.",
+  "Number of studies": "Çalışma sayısı",
+  "Page": "Sayfa",
+  "Previous": "< Geri",
+  "Results per page": "Sayfa başına sonuçlar",
+  "Upload": "Yükle"
 }

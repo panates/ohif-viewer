@@ -1,3 +1,4 @@
+import i18n from 'i18next';
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Icon } from '@ohif/ui';
@@ -116,7 +117,7 @@ function HeaderPatientInfo({ servicesManager, appConfig }: withAppTypes) {
         ) : (
           <div className="text-primary-active self-center text-[13px]">
             {' '}
-            {isMixedPatients ? 'Multiple Patients' : 'Patient'}
+            {i18n.t<string>(isMixedPatients ? 'Header:Multiple Patients' : 'Header:Patient')}
           </div>
         )}
       </div>

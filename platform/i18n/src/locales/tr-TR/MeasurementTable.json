@@ -5,5 +5,11 @@
   "MAX": "Enfazla",
   "NonTargets": "Hedefsiz",
   "Relabel": "Tekrar Etiketle",
-  "Targets": "Hedefler"
+  "Targets": "Hedefler",
+  "No tracked measurements": "Takip edilen ölçüm yok",
+  "Measurements": "Ölçümler",
+  "No, do not ask again": "Hayır, tekrar sorma",
+  "Track measurements for this series?": "Bu seri için ölçümleri izlemek ister misiniz?",
+  "Download CSV": "CSV indir",
+  "Create Report": "Rapor Oluştur"
 }

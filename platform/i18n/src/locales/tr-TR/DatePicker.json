@@ -1,5 +1,9 @@
 {
   "Clear dates": "Tarihleri Temizle",
   "End Date": "Bitiş Tarih",
-  "Start Date": "Başlangıç Tarihi"
+  "Start Date": "Başlangıç Tarihi",
+  "Close": "$t(Common:Close)",
+  "Last 7 days": "Son 7 gün",
+  "Last 30 days": "Son 30 gün",
+  "Today": "Bugün"
 }

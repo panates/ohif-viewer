@@ -1,0 +1,18 @@
+{
+  "Active": "Aktif",
+  "Add new segmentation": "Yeni segmentasyon ekle",
+  "Add segment": "Segmen ekle",
+  "Add segmentation": "Segmentasyon ekle",
+  "Delete": "Sil",
+  "Display inactive segmentations": "Etkin olmayan segmentasyonları görüntüle",
+  "Export DICOM SEG": "DICOM SEG dışarı çıkar",
+  "Download DICOM SEG": "DICOM SEG indir",
+  "Download DICOM RTSTRUCT": "DICOM RTSTRUCT indir",
+  "Fill": "Doldur",
+  "Inactive segmentations": "Etkin olmayan segmentasyonlar",
+  "Opacity": "Opaklık",
+  "Outline": "Anahat",
+  "Rename": "Yeniden adlandır",
+  "Segmentation": "Segmentasyon",
+  "Size": "Boyut"
+}

@@ -245,11 +245,11 @@ function PanelMeasurementTableTracking({
             t={t}
             actions={[
               {
-                label: 'Download CSV',
+                label: t('Download CSV'),
                 onClick: exportReport,
               },
               {
-                label: 'Create Report',
+                label: t('Create Report'),
                 onClick: () => {
                   sendTrackedMeasurementsEvent('SAVE_REPORT', {
                     viewportId: viewportGrid.activeViewportId,

@@ -2,7 +2,24 @@
 
 window.config = {
   routerBasename: '/',
-  // whiteLabeling: {},
+  whiteLabeling: {
+    createLogoComponentFn: function (React) {
+      return React.createElement(
+        'a',
+        {
+          target: '_self',
+          rel: 'noopener noreferrer',
+          className: 'text-purple-600 line-through',
+          href: '/',
+        },
+        React.createElement('img', {
+          src: './assets/advision-logo-white-600.png',
+          width: '140',
+          // className: 'w-8 h-8',
+        })
+      );
+    },
+  },
   extensions: [],
   modes: [],
   customizationService: {},
@@ -37,140 +54,181 @@ window.config = {
   //   regex: /.*/,
   // },
   dataSources: [
+    // {
+    //   namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
+    //   sourceName: 'dicomweb',
+    //   configuration: {
+    //     friendlyName: 'Advision DICOMWeb Server',
+    //     name: 'Advision',
+    //     wadoUriRoot: 'http://10.211.55.11:81/wado',
+    //     qidoRoot: 'http://10.211.55.11:81',
+    //     wadoRoot: 'http://10.211.55.11:81',
+    //     qidoSupportsIncludeField: true,
+    //     supportsReject: false,
+    //     imageRendering: 'wadors',
+    //     thumbnailRendering: 'wadors',
+    //     enableStudyLazyLoad: true,
+    //     supportsFuzzyMatching: false,
+    //     supportsWildcard: true,
+    //     omitQuotationForMultipartRequest: true,
+    //   },
+    // },
+
     {
       namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
       sourceName: 'dicomweb',
       configuration: {
-        friendlyName: 'AWS S3 Static wado server',
-        name: 'aws',
-        wadoUriRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
-        qidoRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
-        wadoRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
-        qidoSupportsIncludeField: false,
-        imageRendering: 'wadors',
-        thumbnailRendering: 'wadors',
-        enableStudyLazyLoad: true,
-        supportsFuzzyMatching: false,
-        supportsWildcard: true,
-        staticWado: true,
-        singlepart: 'bulkdata,video',
-        // whether the data source should use retrieveBulkData to grab metadata,
-        // and in case of relative path, what would it be relative to, options
-        // are in the series level or study level (some servers like series some study)
-        bulkDataURI: {
-          enabled: true,
-          relativeResolution: 'studies',
-          transform: url => url.replace('/pixeldata.mp4', '/rendered'),
-        },
-        omitQuotationForMultipartRequest: true,
-      },
-    },
-
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'ohif2',
-      configuration: {
-        friendlyName: 'AWS S3 Static wado secondary server',
-        name: 'aws',
-        wadoUriRoot: 'https://dd14fa38qiwhyfd.cloudfront.net/dicomweb',
-        qidoRoot: 'https://dd14fa38qiwhyfd.cloudfront.net/dicomweb',
-        wadoRoot: 'https://dd14fa38qiwhyfd.cloudfront.net/dicomweb',
-        qidoSupportsIncludeField: false,
-        supportsReject: false,
-        imageRendering: 'wadors',
-        thumbnailRendering: 'wadors',
-        enableStudyLazyLoad: true,
-        supportsFuzzyMatching: false,
-        supportsWildcard: true,
-        staticWado: true,
-        singlepart: 'bulkdata,video',
-        // whether the data source should use retrieveBulkData to grab metadata,
-        // and in case of relative path, what would it be relative to, options
-        // are in the series level or study level (some servers like series some study)
-        bulkDataURI: {
-          enabled: true,
-          relativeResolution: 'studies',
-        },
-        omitQuotationForMultipartRequest: true,
-      },
-    },
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'ohif3',
-      configuration: {
-        friendlyName: 'AWS S3 Static wado secondary server',
-        name: 'aws',
-        wadoUriRoot: 'https://d3t6nz73ql33tx.cloudfront.net/dicomweb',
-        qidoRoot: 'https://d3t6nz73ql33tx.cloudfront.net/dicomweb',
-        wadoRoot: 'https://d3t6nz73ql33tx.cloudfront.net/dicomweb',
-        qidoSupportsIncludeField: false,
-        supportsReject: false,
-        imageRendering: 'wadors',
-        thumbnailRendering: 'wadors',
-        enableStudyLazyLoad: true,
-        supportsFuzzyMatching: false,
-        supportsWildcard: true,
-        staticWado: true,
-        singlepart: 'bulkdata,video',
-        // whether the data source should use retrieveBulkData to grab metadata,
-        // and in case of relative path, what would it be relative to, options
-        // are in the series level or study level (some servers like series some study)
-        bulkDataURI: {
-          enabled: true,
-          relativeResolution: 'studies',
-        },
-        omitQuotationForMultipartRequest: true,
-      },
-    },
-
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
-      sourceName: 'local5000',
-      configuration: {
-        friendlyName: 'Static WADO Local Data',
-        name: 'DCM4CHEE',
-        qidoRoot: 'http://localhost:5000/dicomweb',
-        wadoRoot: 'http://localhost:5000/dicomweb',
-        qidoSupportsIncludeField: false,
+        friendlyName: 'Orthanc Server',
+        name: 'Orthanc',
+        wadoUriRoot: 'http://192.168.35.230:8000/wado',
+        qidoRoot: 'http://192.168.35.230:8000/dicom-web',
+        wadoRoot: 'http://192.168.35.230:8000/dicom-web',
+        qidoSupportsIncludeField: true,
         supportsReject: true,
-        supportsStow: true,
         imageRendering: 'wadors',
         thumbnailRendering: 'wadors',
-        enableStudyLazyLoad: true,
-        supportsFuzzyMatching: false,
+        enableStudyLazyLoad: false,
+        supportsFuzzyMatching: true,
         supportsWildcard: true,
-        staticWado: true,
-        singlepart: 'video',
-        bulkDataURI: {
-          enabled: true,
-          relativeResolution: 'studies',
-        },
+        omitQuotationForMultipartRequest: true,
       },
     },
 
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomwebproxy',
-      sourceName: 'dicomwebproxy',
-      configuration: {
-        friendlyName: 'dicomweb delegating proxy',
-        name: 'dicomwebproxy',
-      },
-    },
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomjson',
-      sourceName: 'dicomjson',
-      configuration: {
-        friendlyName: 'dicom json',
-        name: 'json',
-      },
-    },
-    {
-      namespace: '@ohif/extension-default.dataSourcesModule.dicomlocal',
-      sourceName: 'dicomlocal',
-      configuration: {
-        friendlyName: 'dicom local',
-      },
-    },
+    // {
+    //   namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
+    //   sourceName: 'dicomweb',
+    //   configuration: {
+    //     friendlyName: 'AWS S3 Static wado server',
+    //     name: 'aws',
+    //     wadoUriRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
+    //     qidoRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
+    //     wadoRoot: 'https://d14fa38qiwhyfd.cloudfront.net/dicomweb',
+    //     qidoSupportsIncludeField: false,
+    //     imageRendering: 'wadors',
+    //     thumbnailRendering: 'wadors',
+    //     enableStudyLazyLoad: true,
+    //     supportsFuzzyMatching: false,
+    //     supportsWildcard: true,
+    //     staticWado: true,
+    //     singlepart: 'bulkdata,video',
+    //     // whether the data source should use retrieveBulkData to grab metadata,
+    //     // and in case of relative path, what would it be relative to, options
+    //     // are in the series level or study level (some servers like series some study)
+    //     bulkDataURI: {
+    //       enabled: true,
+    //       relativeResolution: 'studies',
+    //       transform: url => url.replace('/pixeldata.mp4', '/rendered'),
+    //     },
+    //     omitQuotationForMultipartRequest: true,
+    //   },
+    // },
+
+    // {
+    //   namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
+    //   sourceName: 'ohif2',
+    //   configuration: {
+    //     friendlyName: 'AWS S3 Static wado secondary server',
+    //     name: 'aws',
+    //     wadoUriRoot: 'https://dd14fa38qiwhyfd.cloudfront.net/dicomweb',
+    //     qidoRoot: 'https://dd14fa38qiwhyfd.cloudfront.net/dicomweb',
+    //     wadoRoot: 'https://dd14fa38qiwhyfd.cloudfront.net/dicomweb',
+    //     qidoSupportsIncludeField: false,
+    //     supportsReject: false,
+    //     imageRendering: 'wadors',
+    //     thumbnailRendering: 'wadors',
+    //     enableStudyLazyLoad: true,
+    //     supportsFuzzyMatching: false,
+    //     supportsWildcard: true,
+    //     staticWado: true,
+    //     singlepart: 'bulkdata,video',
+    //     // whether the data source should use retrieveBulkData to grab metadata,
+    //     // and in case of relative path, what would it be relative to, options
+    //     // are in the series level or study level (some servers like series some study)
+    //     bulkDataURI: {
+    //       enabled: true,
+    //       relativeResolution: 'studies',
+    //     },
+    //     omitQuotationForMultipartRequest: true,
+    //   },
+    // },
+
+    // {
+    //   namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
+    //   sourceName: 'ohif3',
+    //   configuration: {
+    //     friendlyName: 'AWS S3 Static wado secondary server',
+    //     name: 'aws',
+    //     wadoUriRoot: 'https://d3t6nz73ql33tx.cloudfront.net/dicomweb',
+    //     qidoRoot: 'https://d3t6nz73ql33tx.cloudfront.net/dicomweb',
+    //     wadoRoot: 'https://d3t6nz73ql33tx.cloudfront.net/dicomweb',
+    //     qidoSupportsIncludeField: false,
+    //     supportsReject: false,
+    //     imageRendering: 'wadors',
+    //     thumbnailRendering: 'wadors',
+    //     enableStudyLazyLoad: true,
+    //     supportsFuzzyMatching: false,
+    //     supportsWildcard: true,
+    //     staticWado: true,
+    //     singlepart: 'bulkdata,video',
+    //     // whether the data source should use retrieveBulkData to grab metadata,
+    //     // and in case of relative path, what would it be relative to, options
+    //     // are in the series level or study level (some servers like series some study)
+    //     bulkDataURI: {
+    //       enabled: true,
+    //       relativeResolution: 'studies',
+    //     },
+    //     omitQuotationForMultipartRequest: true,
+    //   },
+    // },
+
+    // {
+    //   namespace: '@ohif/extension-default.dataSourcesModule.dicomweb',
+    //   sourceName: 'local5000',
+    //   configuration: {
+    //     friendlyName: 'Static WADO Local Data',
+    //     name: 'DCM4CHEE',
+    //     qidoRoot: 'http://localhost:5000/dicomweb',
+    //     wadoRoot: 'http://localhost:5000/dicomweb',
+    //     qidoSupportsIncludeField: false,
+    //     supportsReject: true,
+    //     supportsStow: true,
+    //     imageRendering: 'wadors',
+    //     thumbnailRendering: 'wadors',
+    //     enableStudyLazyLoad: true,
+    //     supportsFuzzyMatching: false,
+    //     supportsWildcard: true,
+    //     staticWado: true,
+    //     singlepart: 'video',
+    //     bulkDataURI: {
+    //       enabled: true,
+    //       relativeResolution: 'studies',
+    //     },
+    //   },
+    // },
+
+    // {
+    //   namespace: '@ohif/extension-default.dataSourcesModule.dicomwebproxy',
+    //   sourceName: 'dicomwebproxy',
+    //   configuration: {
+    //     friendlyName: 'dicomweb delegating proxy',
+    //     name: 'dicomwebproxy',
+    //   },
+    // },
+    // {
+    //   namespace: '@ohif/extension-default.dataSourcesModule.dicomjson',
+    //   sourceName: 'dicomjson',
+    //   configuration: {
+    //     friendlyName: 'dicom json',
+    //     name: 'json',
+    //   },
+    // },
+    // {
+    //   namespace: '@ohif/extension-default.dataSourcesModule.dicomlocal',
+    //   sourceName: 'dicomlocal',
+    //   configuration: {
+    //     friendlyName: 'dicom local',
+    //   },
+    // },
   ],
   httpErrorHandler: error => {
     // This is 429 when rejected from the public idc sandbox too often.
