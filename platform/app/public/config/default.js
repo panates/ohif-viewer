@@ -80,9 +80,9 @@ window.config = {
       configuration: {
         friendlyName: 'Orthanc Server',
         name: 'Orthanc',
-        wadoUriRoot: 'https://advision.panates.net:8080/pacs/wado',
-        qidoRoot: 'https://advision.panates.net:8080/pacs/dicom-web',
-        wadoRoot: 'https://advision.panates.net:8080/pacs/dicom-web',
+        wadoUriRoot: 'https://advision.panates.net/pacs/wado',
+        qidoRoot: 'https://advision.panates.net/pacs/dicom-web',
+        wadoRoot: 'https://advision.panates.net/pacs/dicom-web',
         qidoSupportsIncludeField: true,
         supportsReject: true,
         imageRendering: 'wadors',
