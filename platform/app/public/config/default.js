@@ -60,9 +60,9 @@ window.config = {
       configuration: {
         friendlyName: 'Advision DICOMWeb Server',
         name: 'Advision',
-        wadoUriRoot: '192.168.35.230:81/wado',
-        qidoRoot: '192.168.35.230:81',
-        wadoRoot: '192.168.35.230:81',
+        wadoUriRoot: 'http://192.168.35.230:81/wado',
+        qidoRoot: 'http://192.168.35.230:81',
+        wadoRoot: 'http://192.168.35.230:81',
         qidoSupportsIncludeField: true,
         supportsReject: false,
         imageRendering: 'wadors',
