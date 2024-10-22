@@ -80,9 +80,9 @@ window.config = {
       configuration: {
         friendlyName: 'Orthanc Server',
         name: 'Orthanc',
-        wadoUriRoot: 'http://192.168.35.230:8080/wado',
-        qidoRoot: 'http://192.168.35.230:8080/dicom-web',
-        wadoRoot: 'http://192.168.35.230:8080/dicom-web',
+        wadoUriRoot: 'http://192.168.35.230:8080/pacs/wado',
+        qidoRoot: 'http://192.168.35.230:8080/pacs/dicom-web',
+        wadoRoot: 'http://192.168.35.230:8080/pacs/dicom-web',
         qidoSupportsIncludeField: true,
         supportsReject: true,
         imageRendering: 'wadors',
