@@ -22,7 +22,10 @@ window.config = {
   },
   extensions: [],
   modes: [],
-  customizationService: {},
+  customizationService: {
+    dicomUploadComponent:
+      '@ohif/extension-cornerstone.customizationModule.cornerstoneDicomUploadComponent',
+  },
   showStudyList: true,
   // some windows systems have issues with more than 3 web workers
   maxNumberOfWebWorkers: 3,
@@ -80,9 +83,9 @@ window.config = {
       configuration: {
         friendlyName: 'Orthanc Server',
         name: 'Orthanc',
-        wadoUriRoot: 'https://advision.panates.net/pacs/wado',
-        qidoRoot: 'https://advision.panates.net/pacs/dicom-web',
-        wadoRoot: 'https://advision.panates.net/pacs/dicom-web',
+        wadoUriRoot: '/pacs/wado',
+        qidoRoot: '/pacs/dicom-web',
+        wadoRoot: '/pacs/dicom-web',
         qidoSupportsIncludeField: true,
         supportsReject: true,
         imageRendering: 'wadors',
@@ -91,6 +94,13 @@ window.config = {
         supportsFuzzyMatching: true,
         supportsWildcard: true,
         omitQuotationForMultipartRequest: true,
+        dicomUploadEnabled: true,
+        useBulkDataURI: false,
+        singlepart: 'bulkdata',
+        bulkDataURI: {
+          enabled: true,
+          relativeResolution: 'studies',
+        },
       },
     },
 
