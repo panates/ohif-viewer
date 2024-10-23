@@ -22,7 +22,7 @@ function initWebWorkers(appConfig) {
     taskConfiguration: {
       decodeTask: {
         initializeCodecsOnStartup: false,
-        usePDFJS: false,
+        usePDFJS: true,
         strict: false,
       },
     },
