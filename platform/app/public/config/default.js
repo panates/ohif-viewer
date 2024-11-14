@@ -22,10 +22,8 @@ window.config = {
   },
   extensions: [],
   modes: [],
-  customizationService: {
-    dicomUploadComponent:
-      '@ohif/extension-cornerstone.customizationModule.cornerstoneDicomUploadComponent',
-  },
+  customizationService: {},
+  useCPURendering: false,
   showStudyList: true,
   // some windows systems have issues with more than 3 web workers
   maxNumberOfWebWorkers: 3,
@@ -93,7 +91,7 @@ window.config = {
         supportsFuzzyMatching: true,
         supportsWildcard: true,
         omitQuotationForMultipartRequest: true,
-        dicomUploadEnabled: true,
+        dicomUploadEnabled: false,
         staticWado: true,
         singlepart: 'bulkdata,video',
         bulkDataURI: {
