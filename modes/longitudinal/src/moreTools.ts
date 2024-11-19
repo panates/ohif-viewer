@@ -213,13 +213,13 @@ const moreTools = [
             },
           ],
         }),
-        createButton({
-          id: 'TagBrowser',
-          icon: 'dicom-tag-browser',
-          label: 'Dicom Tag Browser',
-          tooltip: 'Dicom Tag Browser',
-          commands: 'openDICOMTagViewer',
-        }),
+        // createButton({
+        //   id: 'TagBrowser',
+        //   icon: 'dicom-tag-browser',
+        //   label: 'Dicom Tag Browser',
+        //   tooltip: 'Dicom Tag Browser',
+        //   commands: 'openDICOMTagViewer',
+        // }),
         createButton({
           id: 'AdvancedMagnify',
           icon: 'icon-tool-loupe',

@@ -148,17 +148,17 @@ const Thumbnail = ({
                   hideWhenDetached
                   align="start"
                 >
-                  <DropdownMenuItem
-                    onSelect={() => {
-                      onThumbnailContextMenu('openDICOMTagViewer', {
-                        displaySetInstanceUID,
-                      });
-                    }}
-                    className="gap-[6px]"
-                  >
-                    <Icons.DicomTagBrowser />
-                    Tag Browser
-                  </DropdownMenuItem>
+                  {/*<DropdownMenuItem*/}
+                  {/*  onSelect={() => {*/}
+                  {/*    onThumbnailContextMenu('openDICOMTagViewer', {*/}
+                  {/*      displaySetInstanceUID,*/}
+                  {/*    });*/}
+                  {/*  }}*/}
+                  {/*  className="gap-[6px]"*/}
+                  {/*>*/}
+                  {/*  <Icons.DicomTagBrowser />*/}
+                  {/*  Tag Browser*/}
+                  {/*</DropdownMenuItem>*/}
                   {canReject && (
                     <DropdownMenuItem
                       onSelect={() => {
