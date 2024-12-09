@@ -31,7 +31,7 @@ window.config = {
         id: 'cornerstoneOverlayTopRight',
         items: [
           {
-            id: 'PatientNameOverlay',
+            id: 'EstimatedRadiographicMagnificationFactorOverlay',
             // Note below that here we are using the customization prototype of
             // `ohif.overlayItem` which was registered to the customization module in
             // `ohif/extension-default` extension.
@@ -39,32 +39,32 @@ window.config = {
             // the following props are passed to the `ohif.overlayItem` prototype
             // which is used to render the overlay item based on the label, color,
             // conditions, etc.
-            attribute: 'PatientName',
+            attribute: 'EstimatedRadiographicMagnificationFactor',
+            label: 'Magnification:',
+            title: 'Magnification',
+            color: 'yellow',
+            condition: ({ instance }) => instance?.EstimatedRadiographicMagnificationFactor,
+            contentF: ({ instance }) =>
+              'Magnified (' + instance.EstimatedRadiographicMagnificationFactor + ')',
+          },
+          {
+            id: 'PixelSpacingCalibrationOverlay',
+            // Note below that here we are using the customization prototype of
+            // `ohif.overlayItem` which was registered to the customization module in
+            // `ohif/extension-default` extension.
+            customizationType: 'ohif.overlayItem',
+            // the following props are passed to the `ohif.overlayItem` prototype
+            // which is used to render the overlay item based on the label, color,
+            // conditions, etc.
+            attribute: 'PixelSpacingCalibrationType',
             label: 'Measured Size:',
-            title: 'Patient Name',
+            title: 'Measured Size',
             color: 'yellow',
             condition: ({ instance }) => instance?.PixelSpacingCalibrationType,
             contentF: ({ instance }) =>
               instance.PixelSpacingCalibrationType === 'FIDUCIAL' ? 'CALIBRATED' : '',
           },
         ],
-      },
-
-      topLeftItems: {
-        items: {
-          // Note the -10000 means -10000 + length of existing list, which is
-          // much before the start of hte list, so put the new value at the start.
-          '-10000': {
-            id: 'Species',
-            customizationType: 'ohif.overlayItem',
-            label: 'Species:',
-            color: 'red',
-            background: 'green',
-            condition: ({ instance }) => instance?.PatientSpeciesDescription,
-            contentF: ({ instance }) =>
-              instance.PatientSpeciesDescription + '/' + instance.PatientBreedDescription,
-          },
-        },
       },
     },
   ],
