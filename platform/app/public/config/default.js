@@ -22,7 +22,52 @@ window.config = {
   },
   extensions: [],
   modes: [],
-  customizationService: {},
+  customizationService: [
+    {
+      id: '@ohif/cornerstoneOverlay',
+      // Append recursively, rather than replacing
+      merge: 'Append',
+      topRightItems: {
+        id: 'cornerstoneOverlayTopRight',
+        items: [
+          {
+            id: 'PatientNameOverlay',
+            // Note below that here we are using the customization prototype of
+            // `ohif.overlayItem` which was registered to the customization module in
+            // `ohif/extension-default` extension.
+            customizationType: 'ohif.overlayItem',
+            // the following props are passed to the `ohif.overlayItem` prototype
+            // which is used to render the overlay item based on the label, color,
+            // conditions, etc.
+            attribute: 'PatientName',
+            label: 'Measured Size:',
+            title: 'Patient Name',
+            color: 'yellow',
+            condition: ({ instance }) => instance?.PixelSpacingCalibrationType,
+            contentF: ({ instance }) =>
+              instance.PixelSpacingCalibrationType === 'FIDUCIAL' ? 'CALIBRATED' : '',
+          },
+        ],
+      },
+
+      topLeftItems: {
+        items: {
+          // Note the -10000 means -10000 + length of existing list, which is
+          // much before the start of hte list, so put the new value at the start.
+          '-10000': {
+            id: 'Species',
+            customizationType: 'ohif.overlayItem',
+            label: 'Species:',
+            color: 'red',
+            background: 'green',
+            condition: ({ instance }) => instance?.PatientSpeciesDescription,
+            contentF: ({ instance }) =>
+              instance.PatientSpeciesDescription + '/' + instance.PatientBreedDescription,
+          },
+        },
+      },
+    },
+  ],
   useCPURendering: false,
   showStudyList: true,
   // some windows systems have issues with more than 3 web workers
